@@ -2,10 +2,10 @@
   name: "Lucky Verma",
   title: "Web Developer | BCA Student",
   email: "0123luckyverma@gmail.com",
-  phone: "+91 63905 67077", // 👈 Yahan comma add karo
-  github: "https://github.com/luckyx002", // 👈 Yahan comma add karo
-  linkedin: "https://www.linkedin.com/in/lucky-verma-b44860215/", // 👈 Yahan comma add karo
-  photo: "profile.jpg", // 👈 Yahan comma add karo
+  phone: "+91 63905 67077", //  
+  github: "https://github.com/luckyx002", //  
+  linkedin: "https://www.linkedin.com/in/lucky-verma-b44860215/", //  
+  photo: "profile.jpg", //  
   description: "Web Developer currently working at VLP Click, with hands-on experience building and delivering front-end projects for real clients using HTML, CSS, JavaScript and React. Skilled in building responsive, scalable web applications and eager to apply strong problem-solving skills to a front-end / web developer role." // 👈 Last wale me comma nahi lagta
 };
 
