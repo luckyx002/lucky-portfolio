@@ -5,7 +5,6 @@ import { personalInfo, searchResults } from './data';
 function App() {
   return (
     <div className="google-container">
-      {/* Google Header */}
       <header className="google-header">
         <div className="header-top">
           <div className="google-logo">
@@ -28,7 +27,6 @@ function App() {
           </div>
         </div>
         
-        {/* Search Tabs */}
         <div className="search-tabs">
           <div className="tab active">All</div>
           <div className="tab">Images</div>
@@ -38,15 +36,11 @@ function App() {
         </div>
       </header>
 
-      {/* Search Stats */}
       <div className="search-stats">
         About 1,23,000 results (0.42 seconds)
       </div>
 
-      {/* Main Content Layout */}
       <main className="main-content">
-        
-        {/* Left Side: Search Results */}
         <div className="results-container">
           {searchResults.map((result, index) => (
             <div className="search-result" key={index}>
@@ -54,14 +48,14 @@ function App() {
                 <span className="favicon">{result.favicon}</span>
                 {result.url}
               </div>
-              <a href={personalInfo.github} target="_blank" rel="noreferrer" className="result-title">
+              {/* Yahan link properly set hai */}
+              <a href={result.link} target="_blank" rel="noreferrer" className="result-title">
                 {result.title}
               </a>
               <p className="result-snippet">{result.snippet}</p>
             </div>
           ))}
           
-          {/* Pagination */}
           <div className="pagination">
             <span className="goooooogle">
               <span style={{ color: '#4285F4' }}>G</span>
@@ -84,15 +78,22 @@ function App() {
           </div>
         </div>
 
-        {/* Right Side: Knowledge Panel */}
         <div className="knowledge-panel">
           <div className="kp-header">
             <h3>Lucky Verma</h3>
-            <p>Aspiring Web Developer</p>
+            <p>Web Developer | BCA Student</p>
           </div>
           
           <div className="kp-image">
-            <img src={personalInfo.photo} alt={personalInfo.name} />
+            {/* Image Error Fallback */}
+            <img 
+              src={`${import.meta.env.BASE_URL}${personalInfo.photo}`} 
+              alt={personalInfo.name} 
+              onError={(e) => {
+                e.target.onerror = null; 
+                e.target.src = "https://via.placeholder.com/150?text=Lucky+Verma";
+              }}
+            />
           </div>
           
           <div className="kp-details">
@@ -114,10 +115,10 @@ function App() {
             <h4>Profiles</h4>
             <div className="kp-links">
               <a href={personalInfo.github} target="_blank" rel="noreferrer">GitHub</a>
+              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
-
       </main>
     </div>
   );
